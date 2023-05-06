@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" v-bind="linkProps(to)">
+  <component v-bind="linkProps(to)" :is="type">
     <slot />
   </component>
 </template>

@@ -18,7 +18,7 @@
         </span>
         <el-input
           ref="username"
-          v-model="loginForm.username"
+          v-model:value="loginForm.username"
           placeholder="Username"
           name="username"
           type="text"
@@ -34,13 +34,13 @@
         <el-input
           :key="passwordType"
           ref="password"
-          v-model="loginForm.password"
+          v-model:value="loginForm.password"
           :type="passwordType"
           placeholder="Password"
           name="password"
           tabindex="2"
           auto-complete="on"
-          @keyup.enter.native="handleLogin"
+          @keyup.enter="handleLogin"
         />
         <span class="show-pwd" @click="showPwd">
           <svg-icon
@@ -53,7 +53,7 @@
         :loading="loading"
         type="primary"
         style="width: 100%; margin-bottom: 30px"
-        @click.native.prevent="handleLogin"
+        @click.prevent="handleLogin"
         >Login</el-button
       >
 
@@ -105,9 +105,12 @@ export default {
   },
   watch: {
     $route: {
+      deep: true,
+
       handler: function (route) {
         this.redirect = route.query && route.query.redirect
       },
+
       immediate: true,
     },
   },
@@ -146,9 +149,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* 修复input 背景不协调 和光标变色 */
-/* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
-
 $bg: #283443;
 $light_gray: #fff;
 $cursor: #fff;
@@ -158,8 +158,6 @@ $cursor: #fff;
     color: $cursor;
   }
 }
-
-/* reset element-ui css */
 .login-container {
   .el-input {
     display: inline-block;

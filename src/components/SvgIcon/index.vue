@@ -1,11 +1,11 @@
 <template>
   <div
+    v-bind="$attrs"
     v-if="isExternal"
     :style="styleExternalIcon"
     class="svg-external-icon svg-icon"
-    v-on="$listeners"
   />
-  <svg v-else :class="svgClass" aria-hidden="true" v-on="$listeners">
+  <svg v-bind="$attrs" v-else :class="svgClass" aria-hidden="true">
     <use :xlink:href="iconName" />
   </svg>
 </template>
@@ -58,7 +58,6 @@ export default {
   fill: currentColor;
   overflow: hidden;
 }
-
 .svg-external-icon {
   background-color: currentColor;
   mask-size: cover !important;
