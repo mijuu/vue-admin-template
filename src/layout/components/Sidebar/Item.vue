@@ -1,4 +1,4 @@
-<script>
+<script lang="jsx">
 export default function render(_props, _context) {
   const context = {
     ..._context,

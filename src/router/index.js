@@ -2,7 +2,7 @@ import * as Vue from 'vue'
 import * as VueRouter from 'vue-router'
 
 /* Layout */
-import Layout from '@/layout'
+import Layout from '@/layout/index.vue'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -31,13 +31,13 @@ import Layout from '@/layout'
 export const constantRoutes = [
   {
     path: '/login',
-    component: Vue.defineAsyncComponent(() => import('@/views/login/index')),
+    component: Vue.defineAsyncComponent(() => import('@/views/login/index.vue')),
     hidden: true,
   },
 
   {
     path: '/404',
-    component: Vue.defineAsyncComponent(() => import('@/views/404')),
+    component: Vue.defineAsyncComponent(() => import('@/views/404.vue')),
     hidden: true,
   },
 
@@ -50,7 +50,7 @@ export const constantRoutes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: Vue.defineAsyncComponent(
-          () => import('@/views/dashboard/index')
+          () => import('@/views/dashboard/index.vue')
         ),
         meta: { title: 'Dashboard', icon: 'dashboard' },
       },
@@ -68,14 +68,14 @@ export const constantRoutes = [
         path: 'table',
         name: 'Table',
         component: Vue.defineAsyncComponent(
-          () => import('@/views/table/index')
+          () => import('@/views/table/index.vue')
         ),
         meta: { title: 'Table', icon: 'table' },
       },
       {
         path: 'tree',
         name: 'Tree',
-        component: Vue.defineAsyncComponent(() => import('@/views/tree/index')),
+        component: Vue.defineAsyncComponent(() => import('@/views/tree/index.vue')),
         meta: { title: 'Tree', icon: 'tree' },
       },
     ],
@@ -88,7 +88,7 @@ export const constantRoutes = [
       {
         path: 'index',
         name: 'Form',
-        component: Vue.defineAsyncComponent(() => import('@/views/form/index')),
+        component: Vue.defineAsyncComponent(() => import('@/views/form/index.vue')),
         meta: { title: 'Form', icon: 'form' },
       },
     ],
@@ -107,7 +107,7 @@ export const constantRoutes = [
       {
         path: 'menu1',
         component: Vue.defineAsyncComponent(
-          () => import('@/views/nested/menu1/index')
+          () => import('@/views/nested/menu1/index.vue')
         ), // Parent router-view
         name: 'Menu1',
         meta: { title: 'Menu1' },
@@ -115,7 +115,7 @@ export const constantRoutes = [
           {
             path: 'menu1-1',
             component: Vue.defineAsyncComponent(
-              () => import('@/views/nested/menu1/menu1-1')
+              () => import('@/views/nested/menu1/menu1-1/index.vue')
             ),
             name: 'Menu1-1',
             meta: { title: 'Menu1-1' },
@@ -123,7 +123,7 @@ export const constantRoutes = [
           {
             path: 'menu1-2',
             component: Vue.defineAsyncComponent(
-              () => import('@/views/nested/menu1/menu1-2')
+              () => import('@/views/nested/menu1/menu1-2/index.vue')
             ),
             name: 'Menu1-2',
             meta: { title: 'Menu1-2' },
@@ -131,7 +131,7 @@ export const constantRoutes = [
               {
                 path: 'menu1-2-1',
                 component: Vue.defineAsyncComponent(
-                  () => import('@/views/nested/menu1/menu1-2/menu1-2-1')
+                  () => import('@/views/nested/menu1/menu1-2/menu1-2-1/index.vue')
                 ),
                 name: 'Menu1-2-1',
                 meta: { title: 'Menu1-2-1' },
@@ -139,7 +139,7 @@ export const constantRoutes = [
               {
                 path: 'menu1-2-2',
                 component: Vue.defineAsyncComponent(
-                  () => import('@/views/nested/menu1/menu1-2/menu1-2-2')
+                  () => import('@/views/nested/menu1/menu1-2/menu1-2-2/index.vue')
                 ),
                 name: 'Menu1-2-2',
                 meta: { title: 'Menu1-2-2' },
@@ -149,7 +149,7 @@ export const constantRoutes = [
           {
             path: 'menu1-3',
             component: Vue.defineAsyncComponent(
-              () => import('@/views/nested/menu1/menu1-3')
+              () => import('@/views/nested/menu1/menu1-3/index.vue')
             ),
             name: 'Menu1-3',
             meta: { title: 'Menu1-3' },
@@ -159,7 +159,7 @@ export const constantRoutes = [
       {
         path: 'menu2',
         component: Vue.defineAsyncComponent(
-          () => import('@/views/nested/menu2/index')
+          () => import('@/views/nested/menu2/index.vue')
         ),
         name: 'Menu2',
         meta: { title: 'menu2' },

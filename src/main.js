@@ -8,7 +8,7 @@ import en from 'element-plus/es/locale/lang/en'
 
 import '@/styles/index.scss' // global css
 
-import App from './App'
+import App from './App.vue'
 import store from './store'
 import router from './router'
 
