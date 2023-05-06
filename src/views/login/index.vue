@@ -52,6 +52,7 @@
       <el-button
         :loading="loading"
         type="primary"
+        size="large"
         style="width: 100%; margin-bottom: 30px"
         @click.prevent="handleLogin"
         >Login</el-button
@@ -164,6 +165,10 @@ $cursor: #fff;
     height: 47px;
     width: 85%;
 
+    .el-input__wrapper {
+      background-color: transparent;
+      box-shadow: none;
+    }
     input {
       background: transparent;
       border: 0px;

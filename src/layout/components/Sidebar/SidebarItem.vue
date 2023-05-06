@@ -24,7 +24,6 @@
       v-else
       ref="subMenu"
       :index="resolvePath(item.path)"
-      popper-append-to-body
     >
       <template v-slot:title>
         <item
