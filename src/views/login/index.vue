@@ -18,7 +18,7 @@
         </span>
         <el-input
           ref="username"
-          v-model:value="loginForm.username"
+          v-model="loginForm.username"
           placeholder="Username"
           name="username"
           type="text"
@@ -34,7 +34,7 @@
         <el-input
           :key="passwordType"
           ref="password"
-          v-model:value="loginForm.password"
+          v-model="loginForm.password"
           :type="passwordType"
           placeholder="Password"
           name="password"

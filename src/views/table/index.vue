@@ -47,7 +47,7 @@
         width="200"
       >
         <template v-slot="scope">
-          <i class="el-icon-time" />
+          <el-icon><el-icon-time /></el-icon>
           <span>{{ scope.row.display_time }}</span>
         </template>
       </el-table-column>
@@ -56,9 +56,13 @@
 </template>
 
 <script>
+import { Time as ElIconTime } from '@element-plus/icons'
 import { getList } from '@/api/table'
 
 export default {
+  components: {
+    ElIconTime,
+  },
   data() {
     return {
       list: null,

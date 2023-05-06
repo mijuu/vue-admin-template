@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-input
-      v-model:value="filterText"
+      v-model="filterText"
       placeholder="Filter keyword"
       style="margin-bottom: 30px"
     />
