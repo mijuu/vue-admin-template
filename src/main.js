@@ -12,7 +12,8 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
-import installIcon  from '@/icons' // icon
+import installIcon from '@/icons' // icon
+import "virtual:svg-icons-register"
 import '@/permission' // permission control
 
 window.$vueApp = Vue.createApp(App)

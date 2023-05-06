@@ -1,6 +1,8 @@
 import path from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import ViteRequireContext from '@originjs/vite-plugin-require-context'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { createHtmlPlugin } from "vite-plugin-html";
 
 function resolve(dir) {
@@ -21,6 +23,13 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    ViteRequireContext(),
+    createSvgIconsPlugin({
+      // Specify the icon folder to be cached
+      iconDirs: [resolve("src/icons/svg")],
+      // Specify symbolId format
+      symbolId: "icon-[name]",
+    }),
     createHtmlPlugin({
       minify: false,
       entry: "src/main.js",
