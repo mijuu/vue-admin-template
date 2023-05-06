@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { $on, $off, $once, $emit } from '../../utils/gogocodeTransfer'
+import { $emit } from '../../utils/gogocodeTransfer'
 export default {
   name: 'Hamburger',
   props: {

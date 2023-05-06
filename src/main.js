@@ -2,9 +2,9 @@ import * as Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import ElementUI from 'element-plus'
+import ElementPlus from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import en from 'element-plus/es/locale/lang/en'
 
 import '@/styles/index.scss' // global css
 
@@ -12,9 +12,11 @@ import App from './App'
 import store from './store'
 import router from './router'
 
-import '@/icons' // icon
+import installIcon  from '@/icons' // icon
 import '@/permission' // permission control
 
+window.$vueApp = Vue.createApp(App)
+installIcon(window.$vueApp)
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -28,10 +30,9 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
-// set ElementUI lang to EN
-window.$vueApp.use(ElementUI, { locale })
+// set ElementPlus lang to EN
+window.$vueApp.use(ElementPlus, { locale: en })
 
-window.$vueApp = Vue.createApp(App)
 window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
   return path + (path.endsWith('/') ? '' : '/') + pathToAppend
 }

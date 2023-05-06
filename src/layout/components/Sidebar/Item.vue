@@ -1,5 +1,4 @@
 <script>
-import * as Vue from 'vue'
 export default function render(_props, _context) {
   const context = {
     ..._context,

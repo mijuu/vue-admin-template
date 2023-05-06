@@ -1,4 +1,3 @@
-import * as Vue from 'vue'
 import * as Vuex from 'vuex'
 import getters from './getters'
 import app from './modules/app'
